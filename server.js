@@ -5,6 +5,7 @@ const addRoutes=require('./route') //automatikusan index.js-bol keresi
 const app =express();
 
 app.use(express.json());
+app.use(express.urlencoded({extended:false}));
 app.set('view engine', 'ejs');
 
 initDatabase((err, result)=>{

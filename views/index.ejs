@@ -1,10 +1,17 @@
 <%- include('header')%>
+<form action="/" method="GET" class="d-flex gap-2 mb-3">
+    <input type="text" class="form-control" name="s" placeholder="Keresés címre vagy szerzőre..." value="<%=s%>">
+    <button type="submit" class="btn btn-primary">Keresés</button>
+</form>
                 <table class="table table-striped">
                     <thead>
                         <tr>
                             <th>Szerző</th>
                             <th>Cím</th>
+                            <th>ID</th>
                             <th>Műveletek</th>
+                            
+                            
                         </tr>
                     </thead>
                     <tbody>
@@ -17,9 +24,15 @@
                                     <%= item.author %>
                                 </td>
                                 <td>
+                                    <%= item.id %>   
+                                </td>
+                                
+                                <td>
                                     <a href="/editbook/<%= item.id %>" class="btn btn-primary btn-sm m-1">Szerkesztés</a>
                                     <a href="/deletebook/<%= item.id %>" class="btn btn-danger btn-sm m-1">Törlés</a>
                                 </td>
+                                
+                                
                         </tr>
                         
                     <%}) %>
@@ -27,4 +40,5 @@
                     </tbody>
                 </table>
                 <a href="/newbook" class="btn btn-primary">Új könyv</a>
+
 <%- include('footer')%>

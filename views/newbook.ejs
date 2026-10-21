@@ -1,0 +1,18 @@
+<%- include('header')%>
+    <h2><%=typeof book === 'undefined' ? 'Új könyv' : 'Szerkesztés' %></h2>
+    <form method="POST">
+        <div class="mb-3">
+            <label for="title" class="form-label">Cím</label>
+            <input type="text" class="form-control" id="title" name="title" value="<%=typeof book==='undefined'? '' : book.title%>">
+        </div>
+        <div class="mb-3">
+            <label for="title" class="form-label">Szerző</label>
+            <input type="text" class="form-control" id="author" name="author" value="<%=typeof book==='undefined'? '' : book.author%>">
+        </div>
+        <div class="d-flex gap2">
+            <input type="submit" class="btn btn-primary flex-fill" value="Mentés">
+            <a href="/" class="btn btn-warning flex-fill">Mégsem</a>
+        </div>
+
+    </form>
+<%- include('footer')%>

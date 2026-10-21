@@ -1,9 +1,15 @@
 module.exports = (objRep)=>{
     const{bookModel}=objRep;
     return (req, res, next)=>{
-        // console.table(bookModel);
-        //return res.status(200).json(books) 
-        res.locals.books=bookModel.find();
+
+        const s=req.query.s
+        let books=bookModel.find()
+        if(s){
+            books=books.filter(e=>e.title.includes(s)||e.author.includes(s));
+        }
+        
+        res.locals.books=books
+        res.locals.s=s||''
         return next();
     }
 
