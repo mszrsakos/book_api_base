@@ -1,0 +1,37 @@
+
+Resource:
+book/books{
+    id: azonosito
+    title: cim
+    author: szerzo
+}
+
+
+GET /book - osszes konyv lekerese
+GET/book/:id
+POST/book
+    {
+        title: cim
+        author: szerzo
+    }
+DELETE/book/:id - egy konyv torlese
+PATCH/book/:id
+    {
+        title: cim
+        author: szerzo
+    }
+POST/search - konyv kerese
+    {
+        search: "bármi"
+    }
+//Böngésző
+GET / -lista oldal: összeskönyv
+GET / newbook - üres űrlap(szerző, könyvcím)
+POST /newbook - új könyv mentése
+GET / editbook/:id - kitöltött űrlap(szerző, könyvcím)    
+POST /editbook/:id - módosítás mentése
+GET /deletebook:id - törlése
+
+
+redirect: edit mentés után főoldalra
+redirect: törlés után főoldalra
